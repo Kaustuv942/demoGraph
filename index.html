@@ -78,8 +78,9 @@
                         rnd.toString() +
                         ".gif";
                     console.log(imagePath);
-                    if(x > 40){
-                        imagePath = "https://media.istockphoto.com/vectors/question-mark-icon-flat-vector-illustration-design-vector-id1162198273?k=6&m=1162198273&s=612x612&w=0&h=3V-VGVRpaD77MFXao1_ZjoTXI8E2KjOJLYOlbv1DDIs="
+                    if (x > 40) {
+                        imagePath =
+                            "https://media.istockphoto.com/vectors/question-mark-icon-flat-vector-illustration-design-vector-id1162198273?k=6&m=1162198273&s=612x612&w=0&h=3V-VGVRpaD77MFXao1_ZjoTXI8E2KjOJLYOlbv1DDIs=";
                     }
                     x++;
                     return imagePath;
@@ -95,6 +96,15 @@
                 .text(function (d) {
                     return d.name;
                 });
+
+            node.append("a")
+                .attr("xlink:href", "http://google.com")
+                .append("rect")  
+                .attr("height", 20)
+                .attr("width", 20)
+                .style("opacity", "0")
+                .attr("rx", 10)
+                .attr("ry", 10);
 
             force.on("tick", function () {
                 link.attr("x1", function (d) {
