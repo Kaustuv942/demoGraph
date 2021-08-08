@@ -69,7 +69,7 @@
                 .append("g")
                 .attr("class", "node")
                 .call(force.drag);
-
+            var x = 0;
             node.append("image")
                 .attr("xlink:href", function (d) {
                     var rnd = Math.floor(Math.random() * 64 + 1);
@@ -78,6 +78,10 @@
                         rnd.toString() +
                         ".gif";
                     console.log(imagePath);
+                    if(x > 40){
+                        imagePath = "https://media.istockphoto.com/vectors/question-mark-icon-flat-vector-illustration-design-vector-id1162198273?k=6&m=1162198273&s=612x612&w=0&h=3V-VGVRpaD77MFXao1_ZjoTXI8E2KjOJLYOlbv1DDIs="
+                    }
+                    x++;
                     return imagePath;
                 })
                 .attr("x", -8)
